@@ -1,0 +1,71 @@
+/* ------------------------------------------------------------
+   header样式
+------------------------------------------------------------ */
+.headerWrap {
+  height: 65px;
+  line-height: 65px;
+  background-color: #1faa7c;
+  .logoWrap {
+    padding-left: 15px;
+    height: 100%;
+    background: rgba(31, 170, 124, 1);
+  }
+  .logo {
+    display: inline-block;
+    width: 218px;
+    height: 30px;
+    background: url("../../assets/index_common_logo_icon.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+  }
+  .menu {
+    height: 65px !important;
+    line-height: 65px !important;
+    border: none !important;
+    background-color: #1faa7c;
+    color: #fff;
+    li {
+      height: 100%;
+      opacity: 0.65;
+    }
+    :global(.ant-menu-item-selected) {
+      opacity: 1 !important;
+      color: #fff !important;
+      border-bottom: 2px solid #fff !important;
+    }
+  }
+  .popWrap {
+    text-align: center;
+    color: #fff;
+  }
+  .popContent {
+    background: #1faa7c;
+  }
+  .popItem {
+    position: relative;
+    .itemLine {
+      position: absolute;
+      width: 1px;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #dcdfe1;
+    }
+    .itemUserName {
+      font-size: 14px;
+    }
+    .itemIconWrap {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .itemUserIcon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 36px;
+      height: 36px;
+
+      background: url("../../assets/header_default_icon.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}

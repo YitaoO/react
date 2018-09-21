@@ -1,0 +1,157 @@
+/* ================================================================================
+  通用样式
+================================================================================ */
+/* ------------------------------------------------------------
+   定义变量(todo:这里到时根据自己的主题更改)
+------------------------------------------------------------ */
+$mainColor: #17b990; //主要颜色
+$mainColor-02: #818886; //第二主要颜色
+$mainColor-03: #333; //第三主要颜色
+$borderCOlor: #dcdfe1; //边框颜色
+/* ------------------------------------------------------------
+   基础
+------------------------------------------------------------ */
+
+html,
+#root {
+  height: 100%;
+}
+
+body {
+  background: #f5f8fa;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   布局
+------------------------------------------------------------ */
+.grid-list {
+  display: table;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.grid-list-item {
+  display: table-cell !important;
+  vertical-align: middle;
+}
+
+.fill-height {
+  height: 100%;
+}
+/* ------------------------------------------------------------
+   样式
+------------------------------------------------------------ */
+.clearfix:after {
+  // 清除浮动
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.cursor-point {
+  //手型
+  cursor: pointer;
+}
+
+.icon {
+  //图标
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.border {
+  border: solid 1px #dcdfe1;
+}
+
+.boder-bottom {
+  border-bottom: solid 1px #dcdfe1;
+}
+.fill-height {
+  height: 100% !important;
+}
+/* ------------------------------------------------------------
+   颜色
+------------------------------------------------------------ */
+.primary-color {
+  //主题第一颜色
+  color: $mainColor;
+}
+
+.primary-color-02 {
+  //主题第二颜色
+  color: $mainColor-02;
+}
+
+.primary-color-03 {
+  color: $mainColor-03;
+}
+
+.primary-color-white {
+  color: #fff;
+}
+
+.primary-color-bg {
+  background: $mainColor;
+}
+
+.primary-color-bg-white {
+  background: #fff;
+}
+/* ------------------------------------------------------------
+   字体
+------------------------------------------------------------ */
+.font-size-14 {
+  font-size: 0.7rem;
+}
+
+.font-size-16 {
+  font-size: 0.8rem;
+}
+
+.font-size-18 {
+  font-size: 0.9rem;
+}
+
+.font-size-20 {
+  font-size: 1rem;
+}
+
+.font-size-22 {
+  font-size: 1.1rem;
+}
+
+.font-size-24 {
+  font-size: 1.2rem;
+}
+
+.font-size-48 {
+  font-size: 2.4rem;
+}
+/* ------------------------------------------------------------
+   动画
+------------------------------------------------------------ */
+@-webkit-keyframes load {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 70%;
+  }
+}

@@ -1,0 +1,108 @@
+/* ------------------------------------------------------------
+   header样式
+------------------------------------------------------------ */
+//TODO:这里是全局样式，后期设置为局部样式
+:global {
+  .navberWrap {
+    .icon {
+      width: 25px;
+      height: 25px;
+      vertical-align: middle;
+    }
+    .icon-state {
+      background: url("../../assets/menu_icon_state.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-wBench {
+      background: url("../../assets/menu_icon_wBench.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-state {
+      background: url("../../assets/menu_icon_state.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-insp {
+      background: url("../../assets/menu_icon_state.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-wOrder {
+      background: url("../../assets/menu_icon_wOrde.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-repair {
+      background: url("../../assets/menu_icon_repair.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-tReport {
+      background: url("../../assets/menu_icon_tReport.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-aStatistic {
+      background: url("../../assets/menu_icon_aStatistic.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-aReport {
+      background: url("../../assets/menu_icon_aReport.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-baseSet {
+      background: url("../../assets/menu_icon_baseSet.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .icon-systemSet {
+      background: url("../../assets/menu_icon_aStatistic.png") no-repeat;
+      background-size: 100% 100%;
+    }
+
+    //重写菜单样式
+    .ant-menu-item-selected {
+      color: #17b990 !important;
+      .icon-state {
+        background: url("../../assets/menu_icon_state_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-wBench {
+        background: url("../../assets/menu_icon_wBench_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-state {
+        background: url("../../assets/menu_icon_state_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-insp {
+        background: url("../../assets/menu_icon_state_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-wOrder {
+        background: url("../../assets/menu_icon_wOrde_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-repair {
+        background: url("../../assets/menu_icon_repair_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-tReport {
+        background: url("../../assets/menu_icon_tReport_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-aStatistic {
+        background: url("../../assets/menu_icon_aStatistic_active.png")
+          no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-aReport {
+        background: url("../../assets/menu_icon_aReport_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-baseSet {
+        background: url("../../assets/menu_icon_baseSet_active.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .icon-systemSet {
+        background: url("../../assets/menu_icon_aStatistic_active.png")
+          no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}

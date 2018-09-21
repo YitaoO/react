@@ -1,0 +1,39 @@
+.wrap {
+  height: 100%;
+  .wrapLeft {
+    height: 100%;
+  }
+  .wrapRight {
+    height: 100%;
+    background: #fff;
+  }
+  .stateWrap {
+    background: #fff;
+    height: 150px;
+    padding: 15px;
+    box-sizing: border-box;
+    .itemTitle {
+      font-size: 14px;
+      color: #333;
+    }
+    .itemCenter {
+      .progressDes {
+        padding-top: 18px;
+        height: 85px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .mapWrap {
+    margin-top: 10px;
+    height: calc(100% - 160px);
+    background: #fff;
+    .mapTitle {
+      padding: 10px;
+    }
+    .mapCenter {
+      padding: 0px 15px 15px 15px;
+      height: calc(100% - 50px);
+    }
+  }
+}

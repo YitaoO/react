@@ -1,0 +1,51 @@
+/* ================================================================================
+    用于定义一些mixin样式(把全局要用的东西尽量放在这里)
+================================================================================ */
+:global {
+  // @mixin list-margin-top {
+  //   //列表头部边距
+  //   margin-top: 15px;
+  // }
+  // @mixin list-margin-bottom {
+  //   //列表底部边距
+  //   margin-bottom: 15px;
+  // }
+  // @mixin oneLine {
+  //   //一行显示
+  //   overflow: hidden;
+  //   white-space: nowrap;
+  //   text-overflow: ellipsis;
+  //   -webkit-line-clamp: 1;
+  // }
+  // @mixin twoLine {
+  //   //两行显示
+  //   display: -webkit-box;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  //   -webkit-box-orient: vertical;
+  //   -webkit-line-clamp: 2;
+  // }
+
+  // @mixin showGlobalImage($image) {
+  //   // 引入图片
+  //   background: url("../../assets/#{$image}.png") no-repeat;
+  //   background-size: 100% 100%;
+  // }
+  // /* ------------------------------------------------------------
+  //     块状
+  // ------------------------------------------------------------ */
+  // @mixin block-wrap {
+  //   //列表布局
+  //   padding: 15px;
+  //   background: #ffffff;
+  // }
+  // @mixin verHorCenter {
+  //   // 水平垂直居中
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   margin: auto;
+  // }
+}

@@ -1,0 +1,78 @@
+/* ------------------------------------------------------------
+   login样式
+------------------------------------------------------------ */
+.loginWrap {
+  height: 100%;
+  width: 100%;
+  .loginHeader {
+    height: 50px;
+    position: relative;
+    .headerIcon {
+      left: 20px;
+      top: 9px;
+      position: absolute;
+      width: 218px;
+      height: 30px;
+      background: url("../../assets/login_header_icon.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .loginContent {
+    height: calc(100% - 50px);
+    width: 100%;
+    position: relative;
+    .conterBg {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      background: url("../../assets/login_content_icon.png") no-repeat;
+      background-size: 100% 100%;
+      width: 100%;
+      height: 100%;
+    }
+    .contentForm {
+      width: 450px;
+      height: 420px;
+      position: absolute;
+      top: 100px;
+      right: 100px;
+      border-radius: 4px;
+      background: #fff;
+      .loginForm {
+        text-align: center;
+        .Formtitle {
+          text-align: left;
+          height: 60px;
+          font-size: 24px;
+          font-weight: normal;
+          font-family: PingFang-SC;
+          line-height: 60px;
+          padding-left: 20px;
+          color: #17b990;
+        }
+        .formCenter {
+          padding: 30px 20px 0px 20px;
+          .ant-form-explain {
+            text-align: left;
+          }
+        }
+        .form-footer {
+          padding: 0 20px;
+          width: 100%;
+          .footerButton {
+            font-size: 14px;
+            width: 100%;
+            line-height: 45px;
+            height: 45px;
+          }
+          .footerCheck {
+            padding-top: 15px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

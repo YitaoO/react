@@ -1,0 +1,20 @@
+.layoutWrap {
+  height: 100%;
+  .layoutCenter {
+    height: calc(100% - 65px);
+    .centerLeft {
+      width: 200px;
+      background: #fff;
+    }
+    .centerRight {
+      padding: 0 10px 10px;
+      .rightBread {
+        height: 50px;
+        line-height: 50px;
+      }
+      .rightCenter {
+        height: calc(100% - 50px);
+      }
+    }
+  }
+}
