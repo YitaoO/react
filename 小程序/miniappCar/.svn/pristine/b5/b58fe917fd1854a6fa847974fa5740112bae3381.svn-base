@@ -1,0 +1,34 @@
+import Taro, { Component } from "@tarojs/taro";
+import { View, Button } from "@tarojs/components";
+import { connect } from "@tarojs/redux";
+//组件 - baiduMap
+import BaiduMap from "../../components/baiduMap/main";
+
+// 功能 -websocket
+import webSocket from "../../components/webSocket";
+
+import "./index.scss";
+
+@connect(({ userInfo, car }) => ({
+  userInfo,
+  car
+}))
+export default class Index extends Component {
+  componentDidMount = () => {
+    let that = this;
+
+    Taro.showLoading({
+      title: "加载中..."
+    });
+  };
+
+  render() {
+    return (
+      <View className={["index-wrap"]}>
+        <View className="map-wrap">
+          <BaiduMap />
+        </View>
+      </View>
+    );
+  }
+}

@@ -1,0 +1,36 @@
+import Taro, { Component } from "@tarojs/taro";
+import { connect } from "@tarojs/redux";
+import { View } from "@tarojs/components";
+import Search from "../../components/search";
+
+import "./index.scss";
+
+@connect(({ search }) => ({
+  search
+}))
+export default class TravelIndex extends Component {
+  config = {
+    navigationBarTitleText: "行驶统计"
+  };
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  componentDidMount() {
+    this.props.dispatch({
+      type: "search/saveState",
+      response: {
+        isCar: true,
+        isTime: true,
+        isDate: true
+      }
+    });
+  }
+  render() {
+    return (
+      <View className="search-wrap">
+        <Search />
+      </View>
+    );
+  }
+}

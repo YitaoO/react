@@ -1,0 +1,44 @@
+<block>
+    <view class="search-container">
+        <view class="search-wrap">
+            <block wx:if="{{!!isCar}}">
+                <view class="item">
+                    <view class="left">
+                        <view class="title">选择车辆</view>
+                    </view>
+                    <view class="right" bindtap="handleCarChoice">
+                        <text class="title">{{anonymousState__temp}}</text>
+                        <image class="image" src="{{Arrow}}" />
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{!!isTime}}">
+                <view class="item">
+                    <view class="left">
+                        <view class="title">台班规则</view>
+                    </view>
+                    <picker class="right" value="{{dayHour}}" bindchange="handleRuleChoice"
+                    range="{{timeArr}}">
+                        <text class="title">{{timeArr[dayHour]}}</text>
+                        <image class="image" src="{{Arrow}}" />
+                    </picker>
+                </view>
+            </block>
+            <block wx:if="{{!!isDate}}">
+                <view class="item">
+                    <view class="left">
+                        <view class="title">选择日期</view>
+                    </view>
+                    <view class="right date-choice" bindtap="handleDateChoice">
+                        <block wx:if="{{bdate != '' && edate != ''}}">
+                            <text class="value">{{bdate}} 至 {{edate}}</text>
+                        </block>
+                        <image class="image" src="{{Arrow}}" />
+                    </view>
+                </view>
+            </block>
+            <view bindtap="handleSearch" class="{{anonymousState__temp2}}">查询</view>
+        </view>
+        <calendar __triggerObserer="{{ _triggerObserer }}"></calendar>
+    </view>
+</block>

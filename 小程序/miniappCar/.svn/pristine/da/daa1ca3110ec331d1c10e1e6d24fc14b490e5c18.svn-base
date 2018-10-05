@@ -1,0 +1,218 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _dec, _class;
+
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+var _index3 = require("../../npm/@tarojs/redux/index.js");
+
+var _index4 = require("../../components/dialog/index.js");
+
+var _index5 = _interopRequireDefault(_index4);
+
+var _lodash = require("../../npm/lodash/lodash.js");
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ArrowUpIcon = "/images/choiceCar_up_icon.png";
+var ArrowDownIcon = "/images/choiceCar_down_icon.png";
+var CheckALLIcon = "/images/chiceCar_check_box_all_con.png";
+var CheckNoIcon = "/images/chiceCar_check_box_no_con.png";
+
+var ChoiceCar = (_dec = (0, _index3.connect)(function (_ref) {
+  var userInfo = _ref.userInfo,
+      carTree = _ref.carTree;
+  return {
+    userInfo: userInfo,
+    carTree: carTree
+  };
+}), _dec(_class = function (_BaseComponent) {
+  _inherits(ChoiceCar, _BaseComponent);
+
+  function ChoiceCar() {
+    var _ref2;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ChoiceCar);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = ChoiceCar.__proto__ || Object.getPrototypeOf(ChoiceCar)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["loopArray0", "listTreeCar", "anonymousState__temp13", "choiceFatherId", "choiceChildId"], _this.handlePathter = function (item, _ref3) {
+      var isArrow = _ref3.isArrow;
+      var _this$props$carTree = _this.props.carTree,
+          isMultiSelect = _this$props$carTree.isMultiSelect,
+          choiceFatherId = _this$props$carTree.choiceFatherId,
+          showList = _this$props$carTree.showList;
+
+
+      if (!isMultiSelect) {
+        //单选
+        _this.renderMultiSelect(showList, "showList", item.projSubId);
+      } else {
+        if (!!isArrow) {
+          _this.renderMultiSelect(showList, "showList", item.projSubId);
+        } else {
+          _this.renderMultiSelect(choiceFatherId, "choiceFatherId", item.projSubId);
+        }
+      }
+    }, _this.renderMultiSelect = function (parantList, name, projSubId) {
+      var project = [];
+      //TODO:这里的逻辑带优化
+      if (parantList.length == 0) {
+        project.push(String(projSubId));
+      } else {
+        parantList.forEach(function (element) {
+          if (element == String(projSubId)) {
+            project = _lodash2.default.pull(Array.from(parantList), String(projSubId));
+          } else {
+            project = _lodash2.default.concat(Array.from(parantList), String(projSubId));
+          }
+        });
+      }
+
+      _this.props.dispatch({
+        type: "carTree/saveState",
+        response: _defineProperty({}, "" + name, project)
+      });
+    }, _this.handleChildren = function (item) {
+      var _this$props$carTree2 = _this.props.carTree,
+          isMultiSelect = _this$props$carTree2.isMultiSelect,
+          choiceChildId = _this$props$carTree2.choiceChildId;
+
+      if (!isMultiSelect) {
+        _this.props.dispatch({
+          type: "carTree/saveState",
+          response: {
+            choiceCar: item
+          }
+        });
+        _index2.default.navigateBack({
+          delta: 1
+        });
+      } else {
+        _this.renderMultiSelect(choiceChildId, "choiceChildId", item.carId);
+      }
+    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ChoiceCar, [{
+    key: "_constructor",
+    value: function _constructor(props) {
+      _get(ChoiceCar.prototype.__proto__ || Object.getPrototypeOf(ChoiceCar.prototype), "_constructor", this).call(this, props);
+      this.state = {
+        choiceFatherId: [],
+        choiceChildId: []
+      };
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var listTreeCar = this.props.carTree.listTreeCar;
+
+      if (listTreeCar.length == 0) {
+        _index5.default.showLoading();
+        this.props.dispatch({
+          type: "carTree/getCarTree",
+          payload: {
+            userId: this.props.userInfo.carUserInfo.UserID,
+            type: 1
+          }
+        });
+      }
+    }
+    // 点击父亲
+
+    // 点击儿子
+
+  }, {
+    key: "_createData",
+    value: function _createData() {
+      this.__state = arguments[0] || this.state || {};
+      this.__props = arguments[1] || this.props || {};
+
+      var _props$carTree = this.__props.carTree,
+          isMultiSelect = _props$carTree.isMultiSelect,
+          listTreeCar = _props$carTree.listTreeCar,
+          choiceFatherId = _props$carTree.choiceFatherId,
+          choiceChildId = _props$carTree.choiceChildId,
+          showList = _props$carTree.showList;
+
+
+      var loopArray0 = listTreeCar.map(function (item) {
+        item = {
+          $$original: (0, _index.internal_get_original)(item)
+        };
+        var $loopState__temp2 = showList.includes(String(item.$$original.projSubId)) ? ArrowUpIcon : ArrowDownIcon;
+        var $loopState__temp4 = (0, _index.internal_inline_style)({ display: !!isMultiSelect ? "inline-block" : "none" });
+        var $loopState__temp6 = choiceFatherId.includes(String(item.$$original.projSubId)) ? CheckALLIcon : CheckNoIcon;
+        item.$$original.children = item.$$original.children.map(function (childItem) {
+          childItem = {
+            $$original: (0, _index.internal_get_original)(childItem)
+          };
+          var $loopState__temp8 = (0, _index.internal_inline_style)({
+            display: showList.includes(String(childItem.$$original.projSubId)) ? "block" : "none"
+          });
+          var $loopState__temp10 = (0, _index.internal_inline_style)({
+            display: !!isMultiSelect ? "inline-block" : "none"
+          });
+          var $loopState__temp12 = choiceChildId == childItem.$$original.carId || !!isMultiSelect && choiceFatherId.includes(String(childItem.$$original.projSubId)) || choiceChildId.includes(String(childItem.$$original.carId)) ? CheckALLIcon : CheckNoIcon;
+          return {
+            $loopState__temp8: $loopState__temp8,
+            $loopState__temp10: $loopState__temp10,
+            $loopState__temp12: $loopState__temp12,
+            $$original: childItem.$$original
+          };
+        });
+        return {
+          $loopState__temp2: $loopState__temp2,
+          $loopState__temp4: $loopState__temp4,
+          $loopState__temp6: $loopState__temp6,
+          $$original: item.$$original
+        };
+      });
+      var anonymousState__temp13 = {
+        isArrow: true
+      };
+      Object.assign(this.__state, {
+        loopArray0: loopArray0,
+        listTreeCar: listTreeCar,
+        anonymousState__temp13: anonymousState__temp13
+      });
+      return this.__state;
+    }
+  }]);
+
+  return ChoiceCar;
+}(_index.Component)) || _class);
+ChoiceCar.properties = {
+  "carTree": null,
+  "dispatch": null,
+  "userInfo": null
+};
+ChoiceCar.$$events = ["handlePathter", "handleChildren"];
+exports.default = ChoiceCar;
+
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(ChoiceCar, true));

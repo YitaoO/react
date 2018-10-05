@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "baidu-map": "../../components/baiduMap/main"
+  }
+}

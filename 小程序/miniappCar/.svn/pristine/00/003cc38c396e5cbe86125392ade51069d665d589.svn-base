@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "baidu-map": "../../components/baiduMap/main"
+  },
+  "navigationBarTitleText": "轨迹详情"
+}

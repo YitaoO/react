@@ -1,0 +1,6 @@
+<block>
+    <view>
+        <child name="iamhyt" __triggerObserer="{{ _triggerObserer }}" bindonclick="handleChildClick"
+        __fn_onClick="{{true}}">子页面</child>
+    </view>
+</block>

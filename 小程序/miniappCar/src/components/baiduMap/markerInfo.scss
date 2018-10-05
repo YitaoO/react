@@ -1,0 +1,51 @@
+.marker-info {
+  width: 400rpx;
+  height: 410rpx;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 20rpx;
+  padding: 30rpx 30rpx 0 30rpx;
+
+  background: #fff;
+  box-shadow: 1px 2px 16px 0px rgba(12, 43, 76, 0.15);
+  .center {
+    .item {
+      display: flex;
+      padding-bottom: 25rpx;
+    }
+    .left,
+    .right {
+      flex: 1;
+      .title {
+        font-size: 26rpx;
+        color: #666;
+      }
+      .value {
+        font-size: 30rpx;
+        color: #333;
+      }
+    }
+  }
+  .footer {
+    text-align: center;
+    font-size: 26rpx;
+    color: #20abf3;
+    .title {
+      padding-right: 10rpx;
+      vertical-align: top;
+      display: inline-block;
+    }
+    .image {
+      display: inline-flex;
+      // display: inline-block;
+      width: 11px;
+      height: 18px;
+      // background: url("../../images/index_arrow_icon.png") no-repeat;
+      // background-size: 100% 100%;
+    }
+  }
+}

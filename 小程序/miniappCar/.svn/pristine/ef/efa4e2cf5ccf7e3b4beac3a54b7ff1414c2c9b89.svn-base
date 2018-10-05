@@ -1,0 +1,294 @@
+<block>
+    <view class="scroll-wrap">
+        <header-scroll __triggerObserer="{{ _triggerObserer }}"></header-scroll>
+        <scroll-view class="scorll" scroll-y="{{true}}" scroll-with-animation="{{true}}"
+        scroll-top="0" lower-threshold="20" upper-threshold="20" bindscrolltolower="onScrolltolower">
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top" bindtap="handleToDetail">
+                        <view class="text">我是标题</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow" />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">2 时 12 分</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">21.08公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</block>

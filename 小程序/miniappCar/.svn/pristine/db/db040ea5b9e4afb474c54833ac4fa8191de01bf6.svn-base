@@ -1,0 +1,36 @@
+import Taro, { Component } from "@tarojs/taro";
+import { connect } from "@tarojs/redux";
+import { View, Map, CoverView, CoverImage } from "@tarojs/components";
+
+import "./main.scss";
+
+@connect(({ car }) => ({
+  car
+}))
+export default class MapTrace extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      latitude: "23.099994",
+      longitude: "113.324520"
+    };
+  }
+  getLocation = () => {
+    wx.getLocation({
+      success: res => {
+        this.setState({
+          longitude: res.longitude,
+          latitude: res.latitude,
+          controls: []
+        });
+      }
+    });
+  };
+  componentDidMount() {
+    this.getLocation();
+  }
+  render() {
+    return <View class="trance-map-container">我是轨迹啊</View>;
+  }
+}

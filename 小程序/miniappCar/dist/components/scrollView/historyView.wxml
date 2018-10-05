@@ -1,0 +1,32 @@
+<block>
+    <view class="scroll-wrap">
+        <scroll-view class="scorll" scroll-y="{{true}}" scroll-with-animation="{{true}}"
+        scroll-top="0" lower-threshold="20" upper-threshold="20" bindscrolltolower="onScrolltolower">
+            <view class="item" wx:key="{{item.$$original.useEffic}}" bindtap="handleToDetail"
+            wx:for="{{loopArray0}}" wx:for-item="item" data-e-handleToDetail-so="this"
+            data-e-handleToDetail-a-a="{{item.$$original}}">
+                <view class="left">
+                    <view class="cirle"></view>
+                    <view class="line"></view>
+                </view>
+                <view class="right">
+                    <view class="right-top">
+                        <view class="text">{{item.$$original.date}}</view>
+                        <image src="{{ArrowIcon}}" class="navigator-arrow"
+                        />
+                    </view>
+                    <view class="right-bottom">
+                        <view class="time">
+                            <view class="item-title">点火</view>
+                            <view class="item-value">{{item.$loopState__temp2}}</view>
+                        </view>
+                        <view class="distance">
+                            <view class="item-title">行驶</view>
+                            <view class="item-value">{{item.$loopState__temp4}} 公里</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</block>

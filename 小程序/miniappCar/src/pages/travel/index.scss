@@ -1,0 +1,58 @@
+.travel-wrap {
+  height: 100%;
+  .lists {
+    padding: 30px;
+    .item {
+      background: #fff;
+      position: relative;
+      margin-bottom: 20rpx;
+      .top-title {
+        font-size: 25px;
+        color: #666;
+        line-height: 75px;
+        padding-left: 25px;
+        border-bottom: 1px solid #dddd;
+      }
+      .center {
+        padding: 25px;
+        .title {
+          font-size: 35px;
+          color: #333;
+          line-height: 75px;
+        }
+        .box {
+          display: flex;
+          padding-bottom: 20px;
+          .box-left,
+          .box-right {
+            flex: 1;
+            .name {
+              font-size: 21px;
+              color: #666;
+            }
+            .value {
+              font-size: 28px;
+              color: #333;
+            }
+          }
+        }
+      }
+      .item-button {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+
+        .btn-name {
+          font-size: 21px;
+          color: #20abf3;
+          padding-right: 15px;
+        }
+        .image {
+          display: inline-block;
+          width: 10px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}

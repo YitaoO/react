@@ -1,0 +1,21 @@
+<block>
+    <view class="history-index-wrap">
+        <view class="index-top">
+            <view class="top-wrap">
+                <view class="left">
+                    <view class="title">{{choiceCar.carName}}</view>
+                    <view class="value">{{choiceCar.carNumber}}</view>
+                </view>
+                <view class="right" bindtap="handleCarChoice">选择车辆</view>
+            </view>
+        </view>
+        <view class="index-center">
+            <block wx:if="{{list.length > 0}}">
+                <view class="title">历史轨迹</view>
+            </block>
+            <view class="lists">
+                <scorll-history __triggerObserer="{{ _triggerObserer }}"></scorll-history>
+            </view>
+        </view>
+    </view>
+</block>

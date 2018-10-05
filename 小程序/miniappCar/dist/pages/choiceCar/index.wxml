@@ -1,0 +1,27 @@
+<block>
+    <view class="choiceCar-wrap">
+        <view class="item" wx:key="{{item.$$original.kid}}" wx:for="{{loopArray0}}"
+        wx:for-item="item">
+            <view wx:key="{{childItem.projSubId}}" class="father-name">
+                <view class="arrow-wrap" bindtap="handlePathter" data-e-handlePathter-so="this"
+                data-e-handlePathter-a-a="{{item.$$original}}" data-e-handlePathter-a-b="{{anonymousState__temp13}}">
+                    <image class="image-arrow" src="{{item.$loopState__temp2}}" />
+                </view>
+                <view class="check-wrap" bindtap="handlePathter" style="{{item.$loopState__temp4}}"
+                data-e-handlePathter-so="this" data-e-handlePathter-a-a="{{item.$$original}}">
+                    <image class="check-icon" src="{{item.$loopState__temp6}}" />
+                </view>
+                <text class="proj-name">{{item.$$original.projSubName}}</text>
+            </view>
+            <view wx:key="{{childItem.$$original.carId}}" class="child-name" style="{{childItem.$loopState__temp8}}"
+            bindtap="handleChildren" wx:for="{{item.$$original.children}}" wx:for-item="childItem"
+            data-e-handleChildren-so="this" data-e-handleChildren-a-a="{{childItem.$$original}}">
+                <view class="check-wrap" style="{{childItem.$loopState__temp10}}">
+                    <image class="check-icon" src="{{childItem.$loopState__temp12}}" />
+                </view>
+                <text>{{childItem.$$original.carNumber}}</text>{{" "}}
+                <text>{{childItem.$$original.carModelName}}</text>
+            </view>
+        </view>
+    </view>
+</block>

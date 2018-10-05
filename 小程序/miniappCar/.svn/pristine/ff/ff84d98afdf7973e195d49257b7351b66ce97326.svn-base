@@ -1,0 +1,12 @@
+<block>
+    <view class="{{['index-wrap']}}" style="{{anonymousState__temp}}">
+        <view class="map-wrap">
+            <baidu-map __triggerObserer="{{ _triggerObserer }}"></baidu-map>
+        </view>
+        <view class="header-btn" bindtap="handleHeaderBtn"></view>
+        <sider-menu isOpen="{{showSiderMenu}}" __triggerObserer="{{ _triggerObserer }}"></sider-menu>
+        <block wx:if="{{!!showSiderMenu}}">
+            <view class="mask" bindtap="handleHeaderBtn"></view>
+        </block>
+    </view>
+</block>

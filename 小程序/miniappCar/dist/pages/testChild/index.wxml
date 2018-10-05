@@ -1,0 +1,3 @@
+<block>
+    <view bindtap="handleClick">我是测试子页面 {{name}}</view>
+</block>

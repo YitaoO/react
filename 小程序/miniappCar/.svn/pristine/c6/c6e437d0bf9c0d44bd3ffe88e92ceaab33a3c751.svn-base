@@ -1,0 +1,17 @@
+<import src="../../components/calendar/day.wxml"></import>
+<import src="../../components/calendar/month.wxml"></import>
+<view class="calendar-wrap">
+  <view class="calendar-top">
+    <view class="item {{typeIndex ==0?'active':''}}" data-index="0" bindtap="handleTyleChoice">
+      日
+    </view>
+    <view class="item {{typeIndex ==1?'active':''}}" data-index="1" bindtap="handleTyleChoice">
+      周
+    </view>
+    <view class="item {{typeIndex ==2?'active':''}}" data-index="2" bindtap="handleTyleChoice">
+      月
+    </view>
+  </view>
+  <template wx:if="{{typeIndex ==0 || typeIndex ==1}}" is="calendar-day" data="{{...calendar}}" />
+  <template wx:if="{{typeIndex ==2}}" is="calendar-month" data="{{...monthsData}}" />
+</view>

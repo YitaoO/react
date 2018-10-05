@@ -1,0 +1,132 @@
+import Taro, { Component } from "@tarojs/taro";
+import { CoverView, CoverImage } from "@tarojs/components";
+import "./index.scss";
+import { connect } from "@tarojs/redux";
+import historyIcon from "../../images/index_menu_history_icon.png";
+import goStatisticsIcon from "../../images/index_menu_goStatistics_icon.png";
+import alarmStatisticsIcon from "../../images/index_menu_alarmStatistics_icon.png";
+import oilStatisticsIcon from "../../images/index_menu_oilStatistics_icon.png";
+import waterStatisticsIcon from "../../images/index_menu_waterStatistics_icon.png";
+
+@connect(({ userInfo, menu }) => ({
+  userInfo,
+  menu
+}))
+export default class SiderMenu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [
+        {
+          id: 0,
+          title: "历史轨迹",
+          iconPath: historyIcon,
+          iconClass: "history"
+        },
+        {
+          id: 1,
+          title: "行驶统计",
+          iconPath: goStatisticsIcon,
+          iconClass: "goStatistics"
+        },
+        {
+          id: 2,
+          title: "告警统计",
+          iconPath: alarmStatisticsIcon,
+          iconClass: "alarmStatistics"
+        },
+        {
+          id: 3,
+          title: "燃油统计",
+          iconPath: oilStatisticsIcon,
+          iconClass: "oilStatistics"
+        },
+        {
+          id: 4,
+          title: "洒水统计",
+          iconPath: waterStatisticsIcon,
+          iconClass: "waterStatistics"
+        }
+      ]
+    };
+    this.handleMenu = this.handleMenu.bind(this);
+  }
+  componentDidMount() {
+    let that = this;
+    const { weixinUserInfo } = this.props.userInfo;
+
+    if (!!weixinUserInfo) {
+      wx.getUserInfo({
+        success: function(res) {
+          that.props.dispatch({
+            type: "userInfo/saveUserInfo",
+            response: {
+              weixinUserInfo: res.userInfo
+            }
+          });
+        }
+      });
+    }
+  }
+  handleMenuTab = router => {
+    Taro.navigateTo({ url: "/pages/history/index" });
+  };
+  handleMenu = () => {
+    const { isShow } = this.props.menu;
+    this.props.dispatch({
+      type: "menu/saveState",
+      response: {
+        isShow: !isShow
+      }
+    });
+  };
+  render() {
+    //TODO:这里调了4次，记得优化
+    const { isShow } = this.props.menu;
+    const { carUserInfo, weixinUserInfo } = this.props.userInfo;
+
+    return (
+      <CoverView class={!!isShow ? "menu-wrap open-trans" : "menu-wrap"}>
+        <CoverView
+          class="menu-right"
+          class={!!isShow ? "menu-right " : "menu-right hide"}
+          onTap={this.handleMenu}
+        />
+        <CoverView class="menu-left">
+          <CoverView class="menu-header">
+            {!!weixinUserInfo.avatarUrl && (
+              <CoverView class="icon-wrap">
+                <CoverImage src={weixinUserInfo.avatarUrl} class="icon" />
+                {/* <OpenData class="icon" type="userAvatarUrl" /> */}
+              </CoverView>
+            )}
+
+            <CoverView class="right">
+              <CoverView class="name">{carUserInfo.Name}</CoverView>
+              <CoverView class="desp ">
+                {!!carUserInfo.OrgName && (
+                  <CoverView>{carUserInfo.OrgName}/</CoverView>
+                )}
+                <CoverView>{carUserInfo.DeptName}</CoverView>
+              </CoverView>
+            </CoverView>
+          </CoverView>
+          <CoverView class="nav-list">
+            {this.state.list.map(item => {
+              return (
+                <CoverView
+                  class="item"
+                  key={item.id}
+                  onClick={this.handleMenuTab.bind(item.router)}
+                >
+                  <CoverImage src={item.iconPath} class="image" />
+                  <CoverView class="title">{item.title}</CoverView>
+                </CoverView>
+              );
+            })}
+          </CoverView>
+        </CoverView>
+      </CoverView>
+    );
+  }
+}

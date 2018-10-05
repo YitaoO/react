@@ -1,0 +1,50 @@
+import Taro, { Component } from "@tarojs/taro";
+import { connect } from "@tarojs/redux";
+import { View } from "@tarojs/components";
+
+import "./index.scss";
+
+@connect(({ car }) => ({
+  car
+}))
+class ChoiceCar extends Component {
+  config = {
+    navigationBarTitleText: "选择车辆"
+  };
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  handleChoice = item => {
+    this.props.dispatch({
+      type: "car/saveCar",
+      response: {
+        choiceCar: item
+      }
+    });
+    Taro.navigateBack({
+      delta: 1
+    });
+  };
+  render() {
+    const { listTreeCar } = this.props.car;
+
+    return (
+      <View className="choiceCar-wrap">
+        {listTreeCar.map(item => {
+          return (
+            <View
+              className="item"
+              key={item.kid}
+              onClick={this.handleChoice.bind(this, item)}
+            >
+              {item.carName}
+            </View>
+          );
+        })}
+      </View>
+    );
+  }
+}
+
+export default ChoiceCar;

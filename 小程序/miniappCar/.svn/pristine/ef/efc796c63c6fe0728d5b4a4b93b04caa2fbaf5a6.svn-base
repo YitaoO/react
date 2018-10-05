@@ -1,0 +1,84 @@
+import Taro, { Component } from "@tarojs/taro";
+import { View, Text, Image } from "@tarojs/components";
+import "./index.scss";
+import { connect } from "@tarojs/redux";
+
+@connect(({ userInfo }) => ({
+  userInfo
+}))
+export default class SiderMenu extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [
+        {
+          id: 0,
+          title: "历史轨迹",
+          iconClass: "history"
+        },
+        {
+          id: 1,
+          title: "行驶统计",
+          iconClass: "goStatistics"
+        },
+        {
+          id: 2,
+          title: "告警统计",
+          iconClass: "alarmStatistics"
+        },
+        {
+          id: 3,
+          title: "燃油统计",
+          iconClass: "oilStatistics"
+        },
+        {
+          id: 4,
+          title: "洒水统计",
+          iconClass: "waterStatistics"
+        }
+      ]
+    };
+  }
+  handleMenuTab = router => {
+    console.log(router);
+
+    Taro.navigateTo({ url: "/pages/history/index" });
+  };
+
+  render() {
+    //TODO:这里调了4次，记得优化
+    const { isOpen } = this.props;
+    const { carUserInfo } = this.props.userInfo;
+
+    return (
+      <View className={!!isOpen ? "menu-wrap open-trans" : "menu-wrap"}>
+        <View className="menu-header">
+          <View className="icon-wrap ">
+            <open-data class="icon" type="userAvatarUrl" />
+          </View>
+          <View className="right">
+            <View className="name">{carUserInfo.Name}</View>
+            <View className="desp ">
+              {!!carUserInfo.OrgName && <Text>{carUserInfo.OrgName}/</Text>}
+              <Text>{carUserInfo.DeptName}</Text>
+            </View>
+          </View>
+        </View>
+        <View className="nav-list">
+          {this.state.list.map(item => {
+            return (
+              <View
+                className="item"
+                key={item.id}
+                onClick={this.handleMenuTab.bind(item.router)}
+              >
+                <View className={["image ", "" + item.iconClass]} />
+                <Text className="title">{item.title}</Text>
+              </View>
+            );
+          })}
+        </View>
+      </View>
+    );
+  }
+}

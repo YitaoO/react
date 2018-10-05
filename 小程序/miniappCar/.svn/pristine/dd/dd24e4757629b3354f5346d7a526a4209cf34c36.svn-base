@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "scorll-history": "../../components/scrollView/historyView"
+  },
+  "navigationBarTitleText": "历史轨迹"
+}

@@ -1,0 +1,30 @@
+<block>
+    <cover-view class="{{!!isShow ? 'menu-wrap open-trans' : 'menu-wrap'}}">
+        <cover-view class="{{!!isShow ? 'menu-right ' : 'menu-right hide'}}" bindtap="handleMenu"></cover-view>
+        <cover-view class="menu-left">
+            <cover-view class="menu-header">
+                <block wx:if="{{!!weixinUserInfo.avatarUrl}}">
+                    <cover-view class="icon-wrap">
+                        <cover-image src="{{weixinUserInfo.avatarUrl}}" class="icon"></cover-image>
+                    </cover-view>
+                </block>
+                <cover-view class="right">
+                    <cover-view class="name">{{carUserInfo.Name}}</cover-view>
+                    <cover-view class="desp ">
+                        <block wx:if="{{!!carUserInfo.OrgName}}">
+                            <cover-view>{{carUserInfo.OrgName}}/</cover-view>
+                        </block>
+                        <cover-view>{{carUserInfo.DeptName}}</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="nav-list">
+                <cover-view class="item" wx:key="{{item.id}}" bindtap="handleMenuTab"
+                wx:for="{{list}}" wx:for-item="item" data-e-handleMenuTab-so="item.router">
+                    <cover-image src="{{item.iconPath}}" class="image"></cover-image>
+                    <cover-view class="title">{{item.title}}</cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+</block>

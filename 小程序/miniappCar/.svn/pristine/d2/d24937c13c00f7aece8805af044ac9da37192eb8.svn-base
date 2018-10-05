@@ -1,0 +1,18 @@
+export default {
+  namespace: "map",
+  state: {
+    type: 0, //0:首页；1：轨迹
+    showMarker: true, //展示点
+    showBtn: true, //展示按钮
+    showTrace: false //展示轨迹
+  },
+  reducers: {
+    saveState(state, payload) {
+      return {
+        ...state,
+        ...payload.response
+      };
+    }
+  },
+  effects: {}
+};

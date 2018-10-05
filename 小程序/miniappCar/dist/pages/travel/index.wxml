@@ -1,0 +1,117 @@
+<block>
+    <scroll-view class="travel-wrap" scroll-y="{{true}}" scroll-with-animation="{{true}}"
+    bindscroll="onScroll">
+        <search-component bindonclick="handleSearch" __triggerObserer="{{ _triggerObserer }}"
+        __fn_onClick="{{true}}"></search-component>
+        <view class="lists">
+            <view class="item" bindtap="handleToDetail" data-e-handleToDetail-so="this">
+                <view class="top-title">高恩路面</view>
+                <view class="center">
+                    <view class="title">粤AM8346</view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">点火时长</view>
+                            <view class="value">2 h 12 min</view>
+                        </view>
+                        <view class="box-right">
+                            <view class="name">行驶时长</view>
+                            <view class="value">3 h 52 min</view>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">行驶里程</view>
+                            <view class="value">190.46 km</view>
+                        </view>
+                        <view class="box-right">
+                            <view class="name">平均速度</view>
+                            <view class="value">17.43 km/h</view>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">车时利用率</view>
+                            <view class="value">53.78%</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="item-button">
+                    <text class="btn-name">详情</text>
+                    <image class="image" src="{{Arrow}}" />
+                </view>
+            </view>
+            <view class="item" bindtap="handleToDetail" data-e-handleToDetail-so="this">
+                <view class="top-title">高恩路面</view>
+                <view class="center">
+                    <view class="title">粤AM8346</view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">点火时长</view>
+                            <view class="value">2 h 12 min</view>
+                        </view>
+                        <view class="box-right">
+                            <view class="name">行驶时长</view>
+                            <view class="value">3 h 52 min</view>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">行驶里程</view>
+                            <view class="value">190.46 km</view>
+                        </view>
+                        <view class="box-right">
+                            <view class="name">平均速度</view>
+                            <view class="value">17.43 km/h</view>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">车时利用率</view>
+                            <view class="value">53.78%</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="item-button">
+                    <text class="btn-name">详情</text>
+                    <image class="image" src="{{Arrow}}" />
+                </view>
+            </view>
+            <view class="item" bindtap="handleToDetail" data-e-handleToDetail-so="this">
+                <view class="top-title">高恩路面</view>
+                <view class="center">
+                    <view class="title">粤AM8346</view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">点火时长</view>
+                            <view class="value">2 h 12 min</view>
+                        </view>
+                        <view class="box-right">
+                            <view class="name">行驶时长</view>
+                            <view class="value">3 h 52 min</view>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">行驶里程</view>
+                            <view class="value">190.46 km</view>
+                        </view>
+                        <view class="box-right">
+                            <view class="name">平均速度</view>
+                            <view class="value">17.43 km/h</view>
+                        </view>
+                    </view>
+                    <view class="box">
+                        <view class="box-left">
+                            <view class="name">车时利用率</view>
+                            <view class="value">53.78%</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="item-button">
+                    <text class="btn-name">详情</text>
+                    <image class="image" src="{{Arrow}}" />
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</block>

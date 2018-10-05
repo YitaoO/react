@@ -1,0 +1,25 @@
+<block>
+    <view class="{{!!isOpen ? 'menu-wrap open-trans' : 'menu-wrap'}}">
+        <view class="menu-header">
+            <view class="icon-wrap ">
+                <open-data class="icon" __triggerObserer="{{ _triggerObserer }}" type="userAvatarUrl"></open-data>
+            </view>
+            <view class="right">
+                <view class="name">{{carUserInfo.Name}}</view>
+                <view class="desp ">
+                    <block wx:if="{{!!carUserInfo.OrgName}}">
+                        <text>{{carUserInfo.OrgName}}/</text>
+                    </block>
+                    <text>{{carUserInfo.DeptName}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="nav-list">
+            <view class="item" wx:key="{{item.id}}" bindtap="handleMenuTab" wx:for="{{list}}"
+            wx:for-item="item" data-e-handleMenuTab-so="item.router">
+                <view class="{{['image ', '' + item.iconClass]}}"></view>
+                <text class="title">{{item.title}}</text>
+            </view>
+        </view>
+    </view>
+</block>

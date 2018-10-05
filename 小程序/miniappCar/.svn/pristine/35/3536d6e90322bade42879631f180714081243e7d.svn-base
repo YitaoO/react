@@ -1,0 +1,47 @@
+import Taro, { Component } from "@tarojs/taro";
+import { connect } from "@tarojs/redux";
+import { View } from "@tarojs/components";
+//组件 - baiduMap
+import BaiduMap from "../../components/baiduMap/main";
+import Dialog from "../../components/dialog";
+
+import "./index.scss";
+@connect(({ userInfo, car, map }) => ({
+  userInfo,
+  car,
+  map
+}))
+class TraceDetail extends Component {
+  config = {
+    navigationBarTitleText: "轨迹详情"
+  };
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  componentDidMount() {
+    Dialog.showAlert("加载中...");
+
+    this.props.dispatch({
+      type: "car/getCarTrance",
+      payload: {
+        simno: "aaa",
+        bdate: "bbb",
+        edate: "ccc",
+        mapType: 1
+      }
+    });
+  }
+
+  render() {
+    const { carGuijiDetail } = this.props.car;
+
+    return (
+      <View className="trace-wrap">
+        <BaiduMap />
+      </View>
+    );
+  }
+}
+
+export default TraceDetail;

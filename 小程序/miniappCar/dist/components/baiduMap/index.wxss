@@ -1,0 +1,17 @@
+
+.index-map-container {
+  height: 100%; }
+  .index-map-container .reload-btn {
+    position: fixed;
+    bottom: 100rpx;
+    right: 10rpx;
+    height: 120rpx;
+    width: 120rpx;
+    display: inline-block; }
+  .index-map-container .header-btn {
+    position: fixed;
+    top: 20rpx;
+    left: 20rpx;
+    height: 120rpx;
+    width: 120rpx;
+    display: inline-block; }

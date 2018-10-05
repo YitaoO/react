@@ -1,0 +1,76 @@
+import Taro, { Component } from "@tarojs/taro";
+import "./markerInfo.scss";
+
+export default class MarkerInfo extends Component {
+  constructor(props) {
+    super(props);
+    this.handleToDetail = this.handleToDetail.bind(this);
+  }
+
+  handleToDetail = () => {
+    Taro.navigateTo({ url: "/pages/traceDetail/index" });
+  };
+  render() {
+    const { isShow, info } = this.props;
+
+    return (
+      !!isShow && (
+        <cover-view class="marker-info">
+          <cover-view class="center">
+            <cover-view class="item">
+              <cover-view class="left">
+                <cover-view class="title">车牌号</cover-view>
+                <cover-view class="value">{info.carNumber}</cover-view>
+              </cover-view>
+              <cover-view class="right">
+                <cover-view class="title">类型</cover-view>
+                <cover-view class="value">{info.carModel}</cover-view>
+              </cover-view>
+            </cover-view>
+            <cover-view class="item">
+              <cover-view class="left">
+                <cover-view class="title">速度</cover-view>
+                <cover-view class="value">
+                  {info.speed}
+                  km/h
+                </cover-view>
+              </cover-view>
+              <cover-view class="right">
+                <cover-view class="title">熄火</cover-view>
+                <cover-view class="value">
+                  {!!info.acc ? "否" : "是"}
+                </cover-view>
+              </cover-view>
+            </cover-view>
+            <cover-view class="item">
+              <cover-view class="left">
+                <cover-view class="title">司机</cover-view>
+                <cover-view class="value">
+                  {!!info.driverName ? info.driverName : "无"}
+                </cover-view>
+              </cover-view>
+
+              <cover-view class="right">
+                <cover-view class="title">电话</cover-view>
+                <cover-view class="value">
+                  {!!info.driverTel ? info.driverTel : "无"}
+                </cover-view>
+              </cover-view>
+            </cover-view>
+            <cover-view class="item">
+              <cover-view class="left">
+                <cover-view class="title">定位时间</cover-view>
+                <cover-view class="value">{info.adddate}</cover-view>
+              </cover-view>
+            </cover-view>
+          </cover-view>
+
+          <cover-view class="footer" onClick={this.handleToDetail}>
+            <cover-view class="title">历史轨迹</cover-view>
+            <cover-view class="image" />
+          </cover-view>
+        </cover-view>
+      )
+    );
+  }
+}

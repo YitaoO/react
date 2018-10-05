@@ -1,0 +1,13 @@
+<block>
+    <view class="history-index-wrap">
+        <view class="index-top">
+            <view class="top-wrap">
+                <view class="left">
+                    <view class="title">高恩路面</view>
+                    <view class="value">粤ABE391</view>
+                </view>
+                <view class="right">选择车辆</view>
+            </view>
+        </view>
+    </view>
+</block>

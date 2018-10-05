@@ -1,0 +1,5 @@
+<block>
+    <view class="search-wrap">
+        <search __triggerObserer="{{ _triggerObserer }}"></search>
+    </view>
+</block>

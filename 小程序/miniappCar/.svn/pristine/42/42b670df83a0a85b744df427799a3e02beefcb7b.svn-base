@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/registration/index",
+    "pages/history/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#58bdf2",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  }
+}

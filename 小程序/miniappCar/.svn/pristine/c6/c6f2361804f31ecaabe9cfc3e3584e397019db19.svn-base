@@ -1,0 +1,154 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _dec, _class;
+
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+var _index3 = require("../../npm/@tarojs/redux/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var historyIcon = "/images/index_menu_history_icon.png";
+var goStatisticsIcon = "/images/index_menu_goStatistics_icon.png";
+var alarmStatisticsIcon = "/images/index_menu_alarmStatistics_icon.png";
+var oilStatisticsIcon = "/images/index_menu_oilStatistics_icon.png";
+var waterStatisticsIcon = "/images/index_menu_waterStatistics_icon.png";
+
+var SiderMenu = (_dec = (0, _index3.connect)(function (_ref) {
+  var userInfo = _ref.userInfo,
+      menu = _ref.menu;
+  return {
+    userInfo: userInfo,
+    menu: menu
+  };
+}), _dec(_class = function (_BaseComponent) {
+  _inherits(SiderMenu, _BaseComponent);
+
+  function SiderMenu() {
+    var _ref2;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, SiderMenu);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = SiderMenu.__proto__ || Object.getPrototypeOf(SiderMenu)).call.apply(_ref2, [this].concat(args))), _this), _this.$usedState = ["isShow", "weixinUserInfo", "carUserInfo", "list"], _this.handleMenuTab = function (router) {
+      _index2.default.navigateTo({ url: "/pages/history/index" });
+    }, _this.handleMenu = function () {
+      var isShow = _this.props.menu.isShow;
+
+      _this.props.dispatch({
+        type: "menu/saveState",
+        response: {
+          isShow: !isShow
+        }
+      });
+    }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(SiderMenu, [{
+    key: "_constructor",
+    value: function _constructor(props) {
+      _get(SiderMenu.prototype.__proto__ || Object.getPrototypeOf(SiderMenu.prototype), "_constructor", this).call(this, props);
+      this.state = {
+        list: [{
+          id: 0,
+          title: "历史轨迹",
+          iconPath: historyIcon,
+          iconClass: "history"
+        }, {
+          id: 1,
+          title: "行驶统计",
+          iconPath: goStatisticsIcon,
+          iconClass: "goStatistics"
+        }, {
+          id: 2,
+          title: "告警统计",
+          iconPath: alarmStatisticsIcon,
+          iconClass: "alarmStatistics"
+        }, {
+          id: 3,
+          title: "燃油统计",
+          iconPath: oilStatisticsIcon,
+          iconClass: "oilStatistics"
+        }, {
+          id: 4,
+          title: "洒水统计",
+          iconPath: waterStatisticsIcon,
+          iconClass: "waterStatistics"
+        }]
+      };
+      this.handleMenu = this.handleMenu.bind(this);
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var that = this;
+      var weixinUserInfo = this.props.userInfo.weixinUserInfo;
+
+
+      if (!!weixinUserInfo) {
+        wx.getUserInfo({
+          success: function success(res) {
+            that.props.dispatch({
+              type: "userInfo/saveUserInfo",
+              response: {
+                weixinUserInfo: res.userInfo
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "_createData",
+    value: function _createData() {
+      this.__state = arguments[0] || this.state || {};
+      this.__props = arguments[1] || this.props || {};
+
+      //TODO:这里调了4次，记得优化
+      var isShow = this.__props.menu.isShow;
+      var _props$userInfo = this.__props.userInfo,
+          carUserInfo = _props$userInfo.carUserInfo,
+          weixinUserInfo = _props$userInfo.weixinUserInfo;
+
+
+      Object.assign(this.__state, {
+        isShow: isShow,
+        weixinUserInfo: weixinUserInfo,
+        carUserInfo: carUserInfo
+      });
+      return this.__state;
+    }
+  }]);
+
+  return SiderMenu;
+}(_index.Component)) || _class);
+SiderMenu.properties = {
+  "userInfo": null,
+  "menu": null,
+  "dispatch": null
+};
+SiderMenu.$$events = ["handleMenu", "handleMenuTab"];
+exports.default = SiderMenu;
+
+Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(SiderMenu));

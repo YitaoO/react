@@ -1,0 +1,10 @@
+<block>
+    <view class="map_container">
+        <block wx:if="{{type == '0'}}">
+            <index-map __triggerObserer="{{ _triggerObserer }}"></index-map>
+        </block>
+        <block wx:if="{{type == '1'}}">
+            <trace-map __triggerObserer="{{ _triggerObserer }}"></trace-map>
+        </block>
+    </view>
+</block>

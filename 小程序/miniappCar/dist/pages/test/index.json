@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "child": "../testChild/index"
+  },
+  "navigationBarTitleText": "测试页面"
+}

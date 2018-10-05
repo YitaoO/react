@@ -1,0 +1,87 @@
+import Taro, { Component } from "@tarojs/taro";
+import { View, Button } from "@tarojs/components";
+import { connect } from "@tarojs/redux";
+//组件 - baiduMap
+import BaiduMap from "../../components/baiduMap";
+// 组件 - 侧边菜单
+import SiderMenu from "../../components/siderMenu";
+// 功能 -websocket
+import webSocket from "../../components/webSocket";
+// 功能 -loading弹窗
+import Dialog from "../../components/dialog";
+
+import "./index.scss";
+
+@connect(({ userInfo, car }) => ({
+  userInfo,
+  car
+}))
+export default class Index extends Component {
+  config = {
+    navigationBarTitleText: "首页",
+    enablePullDownRefresh: true,
+    backgroundTextStyle: "dark"
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showSiderMenu: false
+    };
+    this.handleHeaderBtn = this.handleHeaderBtn.bind(this);
+  }
+
+  componentDidMount = () => {
+    Taro.showLoading({
+      title: "加载中..."
+    });
+
+    //TODO:这里用了一秒延时，因为刚开始拿不到openId，后期优化
+    setTimeout(() => {
+      this.props.dispatch({
+        type: "userInfo/login",
+        payload: {
+          openID: this.props.userInfo.openId,
+          weixin: "weixin"
+        }
+      });
+    }, 1000);
+  };
+  handleHeaderBtn = () => {
+    this.setState({
+      showSiderMenu: !this.state.showSiderMenu
+    });
+  };
+
+  render() {
+    const { UserID } = this.props.userInfo.carUserInfo;
+    const { carStateList } = this.props.car;
+
+    //TODO:放在这里可能会多次调用,后期优化
+    if (!!UserID && carStateList.length == 0) {
+      this.props.dispatch({
+        type: "car/getCarLastState",
+        payload: {
+          UserId: UserID
+        }
+      });
+    }
+
+    return (
+      <View
+        className={["index-wrap"]}
+        style={{ opacity: carStateList.length == 0 ? "0" : "1" }}
+      >
+        <View className="map-wrap">
+          <BaiduMap />
+        </View>
+        <View className="header-btn" onClick={this.handleHeaderBtn} />
+        <SiderMenu isOpen={this.state.showSiderMenu} />
+        {!!this.state.showSiderMenu && (
+          <View className="mask" onClick={this.handleHeaderBtn} />
+        )}
+      </View>
+    );
+  }
+}

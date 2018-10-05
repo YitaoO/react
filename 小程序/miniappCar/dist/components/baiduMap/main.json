@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "index-map": "./index",
+    "trace-map": "./trance"
+  }
+}

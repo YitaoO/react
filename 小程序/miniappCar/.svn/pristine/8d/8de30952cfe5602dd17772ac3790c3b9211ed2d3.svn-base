@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/travel/index",
+    "pages/index/index",
+    "pages/history/index",
+    "pages/registration/index",
+    "pages/traceDetail/index",
+    "pages/date/index",
+    "pages/choiceCar/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#58bdf2",
+    "navigationBarTitleText": "设备动态管理",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  }
+}

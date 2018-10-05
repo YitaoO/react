@@ -1,0 +1,45 @@
+import Taro from "@tarojs/taro";
+import { reqCarStateList } from "../services/api";
+import { View } from "@tarojs/components";
+import carOn from "../images/index_car_on_icon.png";
+import carOff from "../images/index_car_off_icon.png";
+
+export default {
+  namespace: "car",
+  state: {
+    carStateList: [] //车辆最新状态
+  },
+  reducers: {
+    saveCarState(state, payload) {
+      console.log(payload);
+      return {
+        ...state,
+        carStateList: payload.response
+      };
+    }
+  },
+  effects: {
+    // 车辆最新状态
+    *getCarLastState({ payload }, { call, put }) {
+      let response = yield call(reqCarStateList, payload);
+      Taro.hideLoading();
+      response.forEach(item => {
+        item.id = item.simno;
+        item.width = 61;
+        item.height = 61;
+        item.iconPath = !!item.acc ? carOn : carOff;
+        // item.callout = {
+        //   display: "none",
+        //   content: `<view>${item.carModel}\n${item.carModel}</view>`,
+        //   bgColor: "#ffffff",
+        //   padding: 15
+        // };
+      });
+
+      yield put({
+        type: "saveCarState",
+        response
+      });
+    }
+  }
+};

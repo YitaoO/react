@@ -1,0 +1,53 @@
+<block>
+    <view class="alarm-index-wrap">
+        <search __triggerObserer="{{ _triggerObserer }}"></search>
+        <view class="lists">
+            <view class="item">
+                <view class="top-title">高恩路面</view>
+                <text class="wran-btn">油位异常</text>
+                <view class="box">
+                    <view class="car-name">粤AM8346</view>
+                </view>
+                <view class="box">
+                    <text class="title">点火时长</text>
+                    <view class="value">18/09/17 09:02</view>
+                </view>
+                <view class="box">
+                    <text class="title">微信通知</text>
+                    <view class="value">已发送</view>
+                </view>
+                <view class="box">
+                    <text class="title">通知结果</text>
+                    <view class="value">梁乐安</view>
+                </view>
+                <view class="box">
+                    <text class="title">告警详情</text>
+                    <view class="value">怀阳高速公路TJ10合同段车牌号为粤AD8665的混凝土搅拌车于23时51分驶入35\56号车围栏。</view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="top-title">高恩路面</view>
+                <text class="wran-btn">油位异常</text>
+                <view class="box">
+                    <view class="title">粤AM8346</view>
+                </view>
+                <view class="box">
+                    <text class="title">点火时长</text>
+                    <view class="value">18/09/17 09:02</view>
+                </view>
+                <view class="box">
+                    <text class="title">微信通知</text>
+                    <view class="value">已发送</view>
+                </view>
+                <view class="box">
+                    <text class="title">通知结果</text>
+                    <view class="value">梁乐安</view>
+                </view>
+                <view class="box">
+                    <text class="title">告警详情</text>
+                    <view class="value">怀阳高速公路TJ10合同段车牌号为粤AD8665的混凝土搅拌车于23时51分驶入35\56号车围栏。</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

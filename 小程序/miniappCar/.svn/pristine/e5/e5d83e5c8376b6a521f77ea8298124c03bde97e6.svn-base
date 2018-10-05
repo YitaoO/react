@@ -1,0 +1,127 @@
+/* ================================================================================
+    基础样式
+================================================================================ */
+// @import "./images/iconfont/iconfont.scss";
+Page {
+  height: 100%;
+  background: #f2f2f2;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.view-item {
+  box-sizing: border-box;
+  background: #fff;
+}
+.icon {
+  display: inline-block;
+}
+/* ------------------------------------------------------------
+   布局
+------------------------------------------------------------ */
+.grid-list {
+  display: table;
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.grid-list-item {
+  display: table-cell !important;
+
+  vertical-align: middle;
+}
+.centerLayout {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.oneLine {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  -webkit-line-clamp: 1;
+}
+.twoLine {
+  display: -webkit-box;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* ------------------------------------------------------------
+   通用
+------------------------------------------------------------ */
+
+.border-bottom {
+  border-bottom: 1rpx solid #ccc;
+}
+.margin-btm {
+  margin-bottom: 20rpx;
+}
+
+/* ------------------------------------------------------------
+   颜色
+------------------------------------------------------------ */
+.primary-color {
+  color: #17b990;
+}
+.primary-color-01 {
+  color: #818886;
+}
+.primary-color-02 {
+  color: #333;
+}
+.primary-color-03 {
+  color: #999;
+}
+.primary-color-white {
+  color: #fff;
+}
+
+.primary-color-bg {
+  background: #17b990;
+}
+.primary-color-bg-white {
+  background: #fff;
+}
+
+/* ------------------------------------------------------------
+   字样
+------------------------------------------------------------ */
+.font-default {
+  font-size: 34rpx;
+}
+.font-small {
+  font-size: 22rpx;
+}
+.font-big {
+  font-size: 80rpx;
+}

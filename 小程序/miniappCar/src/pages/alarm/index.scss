@@ -1,0 +1,45 @@
+.alarm-index-wrap {
+  height: 100%;
+  .lists {
+    padding: 30px;
+    .item {
+      position: relative;
+      padding: 0 30px;
+      border-bottom: 1px solid #dddddd;
+      background: #fff;
+      .top-title {
+        line-height: 75px;
+        font-size: 25px;
+        color: #666;
+      }
+      .car-name {
+        font-size: 35px;
+        color: #333;
+      }
+      .box {
+        padding-bottom: 10px;
+        font-size: 35px;
+        color: #333;
+        .title {
+          font-size: 21px;
+          color: #666;
+        }
+        .value {
+          font-size: 28px;
+          color: #333;
+        }
+      }
+      .wran-btn {
+        position: absolute;
+        right: 30px;
+        top: 60px;
+        font-size: 21px;
+        padding: 10px;
+        color: #e6a23c;
+        background-color: #fbf4ea;
+        border-radius: 3px;
+        border: solid 0px #f8d7a2;
+      }
+    }
+  }
+}

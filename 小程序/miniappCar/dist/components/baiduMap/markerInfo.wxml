@@ -1,0 +1,46 @@
+<block>
+    <cover-view class="marker-info">
+        <cover-view class="center">
+            <cover-view class="item">
+                <cover-view class="left">
+                    <cover-view class="title">车牌号</cover-view>
+                    <cover-view class="value">{{markerInfo.carNumber}}</cover-view>
+                </cover-view>
+                <cover-view class="right">
+                    <cover-view class="title">类型</cover-view>
+                    <cover-view class="value">{{markerInfo.carModel}}</cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="left">
+                    <cover-view class="title">速度</cover-view>
+                    <cover-view class="value">{{markerInfo.speed}} km/h</cover-view>
+                </cover-view>
+                <cover-view class="right">
+                    <cover-view class="title">熄火</cover-view>
+                    <cover-view class="value">{{!!markerInfo.acc ? "否" : "是"}}</cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="left">
+                    <cover-view class="title">司机</cover-view>
+                    <cover-view class="value">{{!!markerInfo.driverName ? markerInfo.driverName : "无"}}</cover-view>
+                </cover-view>
+                <cover-view class="right">
+                    <cover-view class="title">电话</cover-view>
+                    <cover-view class="value">{{!!markerInfo.driverTel ? markerInfo.driverTel : "无"}}</cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="item">
+                <cover-view class="left">
+                    <cover-view class="title">定位时间</cover-view>
+                    <cover-view class="value">{{markerInfo.adddate}}</cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view class="footer" bindtap="handleToDetail">
+            <cover-view class="title">历史轨迹</cover-view>
+            <cover-image class="image" src="{{Arrow}}"></cover-image>
+        </cover-view>
+    </cover-view>
+</block>
