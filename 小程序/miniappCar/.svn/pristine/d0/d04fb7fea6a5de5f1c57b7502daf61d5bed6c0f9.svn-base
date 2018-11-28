@@ -1,6 +1,0 @@
-<block>
-    <view class="choiceCar-wrap">
-        <view class="item" wx:key="{{item.kid}}" bindtap="handleChoice" wx:for="{{listTreeCar}}"
-        wx:for-item="item" data-e-handleChoice-so="this" data-e-handleChoice-a-a="{{item}}">{{item.carName}}</view>
-    </view>
-</block>

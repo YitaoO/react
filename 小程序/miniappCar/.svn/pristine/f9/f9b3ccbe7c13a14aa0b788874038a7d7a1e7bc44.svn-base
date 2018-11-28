@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "baidu-map": "../../components/baiduMap/index"
-  },
-  "navigationBarTitleText": "首页",
-  "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark"
-}

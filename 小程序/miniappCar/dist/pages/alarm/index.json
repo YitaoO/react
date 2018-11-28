@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "search": "../../components/search/index"
-  },
-  "navigationBarTitleText": "告警统计"
-}

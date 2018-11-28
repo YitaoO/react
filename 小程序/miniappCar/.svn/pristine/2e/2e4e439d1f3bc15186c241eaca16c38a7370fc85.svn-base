@@ -1,7 +1,0 @@
-import userInfo from "./userInfo";
-import map from "./map";
-import menu from "./menu";
-import car from "./car";
-import WebSocket from "./websocket";
-
-export default [userInfo, map, menu, car, WebSocket];

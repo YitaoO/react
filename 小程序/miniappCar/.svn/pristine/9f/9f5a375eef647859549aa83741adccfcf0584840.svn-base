@@ -1,7 +1,0 @@
-<block>
-    <view class="{{['index-wrap']}}">
-        <view class="map-wrap">
-            <baidu-map __triggerObserer="{{ _triggerObserer }}"></baidu-map>
-        </view>
-    </view>
-</block>

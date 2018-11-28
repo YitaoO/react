@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "search-component": "../../components/search/index"
-  },
-  "navigationBarTitleText": "行驶统计"
-}

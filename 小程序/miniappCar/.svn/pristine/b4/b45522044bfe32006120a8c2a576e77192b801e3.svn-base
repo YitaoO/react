@@ -1,7 +1,0 @@
-<block>
-    <view class="{{['index-wrap']}}" style="{{anonymousState__temp}}">
-        <view class="map-wrap">
-            <baidu-map isShow="{{showSiderMenu}}" __triggerObserer="{{ _triggerObserer }}"></baidu-map>
-        </view>
-    </view>
-</block>

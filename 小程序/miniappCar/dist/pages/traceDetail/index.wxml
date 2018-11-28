@@ -1,5 +1,0 @@
-<block>
-    <view class="trace-wrap">
-        <baidu-map __triggerObserer="{{ _triggerObserer }}"></baidu-map>
-    </view>
-</block>

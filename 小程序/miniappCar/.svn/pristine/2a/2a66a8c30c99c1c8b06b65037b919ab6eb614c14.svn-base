@@ -1,5 +1,0 @@
-import userInfo from "./userInfo";
-import car from "./car";
-import WebSocket from "./websocket";
-
-export default [userInfo, car, WebSocket];

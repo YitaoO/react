@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "marker-info-window": "./markerInfo",
-    "sider-menu": "../../components/siderMenu/index"
-  }
-}
